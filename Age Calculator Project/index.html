@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Professional Age Calculator — calculate exact age in years, months and days with accessibility, responsive design, and production standards."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>AgeCalc | Exact Calculator</title>
+  </head>
+
+  <body>
+    <header class="header-site">
+      <div class="nav-container container">
+        <a class="brand" href="#">Age<span>Calc</span></a>
+        <nav>
+          <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#calculator">Calculator</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container text-center">
+        <h1 id="hero-title">
+          <span class="gradient-text">Age Calculator</span> <br />
+          Built with Modern Web Standards
+        </h1>
+        <p class="lead">
+          Calculate your exact age in years, months, and days — with precision,
+          accessibility, and performance in mind. Designed like a real-world
+          developer project: clean code, responsive UI, and production-ready.
+        </p>
+        <div class="hero-actions">
+          <a href="#calculator" class="btn btn-primary"
+            >🚀 Try the Calculator</a
+          >
+          <a
+            href="https://github.com/abubakershad"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-ghost"
+            >💻 View Source</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="features"
+      class="features section"
+      aria-labelledby="features-title"
+    >
+      <div class="container">
+        <header class="features-head text-center">
+          <h2 id="features-title">Why Choose AgeCalc?</h2>
+          <p>
+            AgeCalc is built to be fast, accurate, and reliable — whether you’re
+            a casual user or a developer. With precision, accessibility, and
+            best practices at its core, this tool ensures smooth performance on
+            every device while respecting your privacy.
+          </p>
+        </header>
+
+        <div class="grid features-grid">
+          <article class="feature-card">
+            <h3>✅ Accurate</h3>
+            <p>
+              Handles leap years, month lengths, and edge cases — returns exact
+              years, months, and days without rounding using robust JavaScript
+              Date APIs.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>📱 Responsive</h3>
+            <p>
+              Mobile-first, adaptive layouts with touch-friendly controls and
+              readable typography for a seamless experience on any screen size.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>♿ Accessible</h3>
+            <p>
+              Fully screen-reader friendly with ARIA attributes, keyboard
+              navigation, clear error messages and visible focus states for
+              inclusive design.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>⚡ Performance</h3>
+            <p>
+              Lightweight footprint with minimal dependencies, non-blocking
+              scripts, and optimized CSS for blazing-fast load times worldwide.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>🔒 Privacy-first</h3>
+            <p>
+              100% client-side — all calculations run on your device. No data is
+              ever sent to servers, ensuring complete privacy.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>🎯 Developer-friendly</h3>
+            <p>
+              Clean, semantic code with documented functions — easy to embed,
+              extend, and integrate into any project or workflow.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>🎨 Polished UI</h3>
+            <p>
+              Smooth animations, subtle shadows, and modern design inspired by
+              global UX standards for a professional, delightful user
+              experience.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>♿ Accessible</h3>
+            <p>
+              Fully screen-reader friendly with ARIA attributes, keyboard
+              navigation, clear error messages and visible focus states for
+              inclusive design.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <main id="main" class="main" role="main">
+      <section
+        id="calculator"
+        class="calculator section"
+        aria-labelledby="calc-title"
+      >
+        <div class="container">
+          <h2 id="calc-title">Age Calculator</h2>
+          <div
+            class="calculator-card glass"
+            role="region"
+            aria-labelledby="calc-title"
+          >
+            <p class="muted small">
+              Enter your date of birth to calculate your exact age in years,
+              months, and days.
+            </p>
+
+            <form id="ageForm" class="form" novalidate>
+              <div class="form-row">
+                <label for="dob">Date of Birth</label>
+                <input
+                  id="dob"
+                  name="dob"
+                  type="date"
+                  required
+                  inputmode="numeric"
+                  aria-required="true"
+                  aria-describedby="dob-help error"
+                />
+                <small id="dob-help" class="muted">Format: YYYY-MM-DD</small>
+                <div id="error" class="error" aria-live="polite"></div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                  Calculate Age
+                </button>
+                <button type="button" id="resetBtn" class="btn btn-ghost">
+                  Reset
+                </button>
+              </div>
+            </form>
+
+            <div
+              id="result"
+              class="result"
+              aria-live="polite"
+              aria-atomic="true"
+            ></div>
+
+            <div class="notes small muted">
+              Tip: On mobile devices, the date input uses your device’s native
+              date picker.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section id="about" class="about section" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title">About This Project</h2>
+        <p>
+          This Age Calculator was developed as part of the
+          <strong>CodeAlpha Web Development Internship</strong>. It goes beyond
+          being a simple utility — serving as a showcase of modern frontend
+          development practices including semantic HTML5, responsive design,
+          accessibility, and performance-focused JavaScript.
+        </p>
+        <p>
+          Designed with both casual users and developers in mind, it ensures
+          correctness (handling leap years, month lengths, and edge cases),
+          accessibility (clear labels, ARIA live regions, keyboard navigation),
+          and performance (minimal dependencies, deferred scripts, and fast load
+          times).
+        </p>
+        <p>
+          Technical highlights include a clean separation of UI and logic,
+          well-tested date calculations, clear error handling, and polished
+          micro-interactions. Inspired by leading design systems (Google, Apple,
+          Microsoft, Shopify), the UI combines responsive layouts,
+          glassmorphism, and dark/light themes for a professional experience.
+        </p>
+        <p>
+          Use cases include birthdays, anniversaries, event planning, and age
+          verification, but it can also serve as a coding reference or reusable
+          module in larger applications. The dependency-free structure makes it
+          easy to fork, adapt, and integrate.
+        </p>
+        <p>
+          Future improvements may include an optional time-of-day field for
+          precise DOB, internationalization for localized formats, and a
+          copy-to-clipboard feature for quick sharing of results.
+        </p>
+        <p>
+          Overall, this project demonstrates
+          <strong>real-world developer workflows</strong>, professional coding
+          standards, and a focus on practical UX — making it a strong portfolio
+          piece for internships, job applications, or open-source contributions.
+        </p>
+      </div>
+    </section>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-grid">
+        <p>
+          © <span id="year"></span> AgeCalc — Built by
+          <strong>Abu Baker Shad</strong>
+        </p>
+        <nav aria-label="Social links">
+          <ul class="footer-links">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/abu-baker-shad"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-linkedin"></i> LinkedIn</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/abubakershad"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-github"></i> GitHub</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://abubakershad.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fas fa-user"></i> Portfolio</a
+              >
+            </li>
+            <li>
+              <a href="mailto:abubakershad111@email.com">
+                <i class="fas fa-envelope"></i> Email</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/abubakrshad"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-facebook"></i> Facebook</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
