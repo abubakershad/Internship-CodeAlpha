@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -7,23 +8,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- NAV -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">CodeAlpha</a>
+      <a class="brand" href="index.html">Music Player</a>
       <nav class="nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
         <a href="faq.html">FAQ's</a>
-        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
       </nav>
     </div>
   </header>
 
-  <!-- MAIN -->
   <main class="container main-layout">
-    <!-- LEFT: Playlist -->
     <aside class="left-playlist card">
       <div class="pl-header">
         <h3>Playlist</h3>
@@ -36,7 +35,6 @@
       <div id="playlist" class="playlist"></div>
     </aside>
 
-    <!-- CENTER: Player -->
     <section class="center-player card">
       <div class="player-top">
         <div class="cover-wrap">
@@ -80,7 +78,6 @@
       </div>
     </section>
 
-    <!-- RIGHT: Featured -->
     <aside class="right-card card">
       <h3>Featured</h3>
       <p class="muted">Try sample tracks or upload your own. UI has gradients, animation and a sticky mini-player.</p>
@@ -90,7 +87,6 @@
     </aside>
   </main>
 
-  <!-- MINI PLAYER -->
   <div class="mini-player" id="miniPlayer">
     <div class="mini-left">
       <img id="miniCover" src="assets/cover.jpg" alt="mini cover">
@@ -106,7 +102,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner container">
       <div class="f-brand">
@@ -114,9 +109,15 @@
         <p class="muted">A Deezer-inspired music player built for CodeAlpha internship.</p>
       </div>
       <div class="f-links">
-        <div><h4>Company</h4><a href="about.html">About</a></div>
-        <div><h4>Products</h4><a href="index.html">Player</a><a href="services.html">Services</a></div>
-        <div><h4>Support</h4><a href="faq.html">FAQ's</a></div>
+        <div>
+          <h4>Company</h4><a href="about.html">About</a>
+        </div>
+        <div>
+          <h4>Products</h4><a href="index.html">Player</a><a href="services.html">Services</a>
+        </div>
+        <div>
+          <h4>Support</h4><a href="faq.html">FAQ's</a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">© 2025 CodeAlpha Music — All rights reserved</div>
@@ -125,4 +126,5 @@
   <audio id="audio" preload="metadata"></audio>
   <script src="script.js"></script>
 </body>
+
 </html>
