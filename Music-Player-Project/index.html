@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CodeAlpha Music — Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">CodeAlpha</a>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ's</a>
+        <a href="services.html">Services</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container main-layout">
+    <!-- LEFT: Playlist -->
+    <aside class="left-playlist card">
+      <div class="pl-header">
+        <h3>Playlist</h3>
+        <label for="uploadInput" class="btn small">Upload</label>
+        <input id="uploadInput" type="file" accept="audio/*" multiple hidden>
+      </div>
+      <div class="pl-search">
+        <input id="searchInput" placeholder="Search tracks or artists..." />
+      </div>
+      <div id="playlist" class="playlist"></div>
+    </aside>
+
+    <!-- CENTER: Player -->
+    <section class="center-player card">
+      <div class="player-top">
+        <div class="cover-wrap">
+          <img id="coverImg" class="cover-art" src="assets/cover.jpg" alt="cover">
+        </div>
+        <div class="meta">
+          <h1 id="trackTitle">No song loaded</h1>
+          <p id="trackArtist">—</p>
+          <div class="meta-actions">
+            <span id="statusPill" class="pill">Stopped</span>
+            <span id="trackCount" class="muted">Tracks: 0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls-row">
+        <button id="shuffleBtn" class="icon">🔀</button>
+        <button id="prevBtn" class="icon">⏮</button>
+        <button id="playBtn" class="play large">▶️</button>
+        <button id="nextBtn" class="icon">⏭</button>
+        <button id="repeatBtn" class="icon">🔁</button>
+      </div>
+
+      <div class="progress-row">
+        <span id="curTime">0:00</span>
+        <input id="seek" type="range" min="0" max="100" value="0">
+        <span id="durTime">0:00</span>
+      </div>
+
+      <div class="player-bottom">
+        <div class="left">
+          <div class="volume">
+            <label class="muted">Vol</label>
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="1">
+          </div>
+        </div>
+        <div class="right">
+          <button id="exportBtn" class="btn small muted">Export</button>
+          <button id="clearBtn" class="btn small muted">Clear</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT: Featured -->
+    <aside class="right-card card">
+      <h3>Featured</h3>
+      <p class="muted">Try sample tracks or upload your own. UI has gradients, animation and a sticky mini-player.</p>
+      <div class="featured-art">
+        <img src="assets/cover.jpg" alt="featured" />
+      </div>
+    </aside>
+  </main>
+
+  <!-- MINI PLAYER -->
+  <div class="mini-player" id="miniPlayer">
+    <div class="mini-left">
+      <img id="miniCover" src="assets/cover.jpg" alt="mini cover">
+      <div class="mini-meta">
+        <div id="miniTitle">Nothing playing</div>
+        <div id="miniArtist">—</div>
+      </div>
+    </div>
+    <div class="mini-controls">
+      <button id="miniPrev" class="icon">⏮</button>
+      <button id="miniPlay" class="play small">▶️</button>
+      <button id="miniNext" class="icon">⏭</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner container">
+      <div class="f-brand">
+        <h3>CodeAlpha Music</h3>
+        <p class="muted">A Deezer-inspired music player built for CodeAlpha internship.</p>
+      </div>
+      <div class="f-links">
+        <div><h4>Company</h4><a href="about.html">About</a></div>
+        <div><h4>Products</h4><a href="index.html">Player</a><a href="services.html">Services</a></div>
+        <div><h4>Support</h4><a href="faq.html">FAQ's</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 CodeAlpha Music — All rights reserved</div>
+  </footer>
+
+  <audio id="audio" preload="metadata"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
